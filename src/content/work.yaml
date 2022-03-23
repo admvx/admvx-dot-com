@@ -1,0 +1,195 @@
+
+---
+
+id: as2
+title: AS2 Language Support
+tall_title: true
+low_opacity: true
+subtitle: Visual Studio Code extension
+body: This is a zero-configuration language support extension, built as a personal project over several months, and which leverages Microsoft's <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>.
+  
+  The extension is written in TypeScript, has a test suite built with <a href="https://jestjs.io/">Jest</a>, and I designed the <a href="https://github.com/admvx/as2-language-support/blob/main/icon.svg">extension logo</a> in Adobe Illustrator.
+date: 2020-01-01
+image_description: Screenshot of the AS2 Language Support extension page on the Visual Studio Marketplace site
+link:
+  url: https://marketplace.visualstudio.com/items?itemName=admvx.as2-language-support
+  text: View extension on Marketplace
+  hover: Visit AS2 Language Support extension page
+tags: []
+
+---
+
+id: pre-apt
+title: Pre-Apt
+page_title: PreApt
+subtitle: Electron-based UI debugger
+body: PreApt is a tool I designed and built to accelerate the UI development workflow of my team at Electronic Arts. Previously, all UI testing was conducted in game, requiring a lengthy compilation process for each iteration, which PreApt eliminates.
+  
+  The application employs several exotic strategies to patch the supporting codebase and achieve compatibility with the full-blown game engine, while extending functionality to aid in debugging. It makes use of multithreading to monitor and serve local source files, and to run Perforce queries on available workspaces.
+image_description: Screenshot of the PreApt application, showing various UI controls
+link:
+  url: https://vimeo.com/679904303
+  text: View Pre-Apt feature tour
+  hover: Watch on vimeo.com
+tags: []
+
+---
+
+id: game-ui
+title: Game UI
+subtitle: Highlights 2018–2021
+body: This is a short demo reel showcasing some of the UI work I've completed over the past few years at Electronic Arts.
+  
+  In the video linked below, the visual and motion designs were provided by external or in-house artists, while I responsible for the in-game implementation.
+date: 2021-02-10
+image_description: Still image from the linked video, showing a frame from an item-unlock celebratory animation
+link:
+  url: https://vimeo.com/596994967
+  text: View highlight reel
+  hover: Watch on vimeo.com
+tags: []
+
+---
+
+id: chat-builder
+title: Chat Builder
+subtitle: Conversational AI script editor + chat system
+body: While tasked with researching chatbot technologies, I proposed, designed and implemented this pair of systems for authoring + rendering chatbot content.
+  
+  This solution has been used successfully in building automated behavioural coaches, and allows copy writers and developers to collaborate directly within the same application.
+image_description: Screenshot from the Chat Builder app, showing a series of nodes and connections, forming a sample script
+link:
+  url: https://vimeo.com/679914466
+  text: View script authoring demo
+  hover: Watch on vimeo.com
+tags: []
+
+---
+
+id: admvx-dot-com
+title: admvx.com
+page_title: Personal portfolio site
+low_opacity: true
+subtitle: Personal portfolio site
+body: In developing this website, I took the somewhat impractical approach of designing and building it in unison, starting with the <strong>admvx</strong> handle, deriving a polygonal motif from the letterforms and working outwards from there.
+  
+  I chose <a href="https://vuejs.org/">Vue.js</a> as the foundational technology, pared down the 3D library <a href="http://seenjs.io/">seen.js</a> to render the polyhedron, and developed several bespoke animation solutions to achieve the inertia-centric motion design.
+image_description: Screenshot of a text editor containing a TypeScript file, next to a browser window showing the admvx.com site
+link:
+  url: https://github.com/admvx/admvx-dot-com
+  text: View source code on Github
+  hover: Visit repository
+tags: []
+
+---
+
+id: factor-fusion
+title: Factor Fusion
+subtitle: Web + mobile mini-game
+body: Factor Fusion is the most recent of four educational games I developed for <a href="https://www.gene.com/">Genentech</a>, focussing on the mechanics of blood coagulation. I was responsible for the full implementation, audio design and gameplay animation – and had the privilege of co-designing the concept + visual style with talented colleagues.
+  
+  The game uses <a href="https://pixijs.com/">Pixi.js</a> for WebGL accelerated rendering, along with the <a href="https://chipmunk-physics.net/">Chipmunk physics engine</a> – enhanced with magnetic behaviours – to drive the puzzle solving interaction.
+image_description: Screenshot from the beginning of the Factor Fusion game, showing the game timer and a number of proteins floating in a broken blood vessel
+link:
+  url: https://www.gene.com/factor-fusion/
+  text: Play Factor Fusion
+  hover: Launch the game on gene.com
+tags: []
+
+---
+
+id: trump-tribune
+title: Trump Tribune
+low_opacity: true
+subtitle: GIF-generating Twitter bot
+body: While I would ultimately consider this a failed experiment in generative satire, Trump Tribune met my technical ambitions and was a mild salve to the feeling of helpless dismay conjured by the Trump administration.
+  
+  The bot runs on Node.js to serve a private web app – comprised of generative text, SVG and Google-Image-Searched pictorial content – before capturing an image sequence through the headless browser library <a href="https://pptr.dev/">Puppeteer</a>, and assembling those frames into the GIF that's ultimately published through the <a href="https://developer.twitter.com/">Twitter API</a>.
+image_description: Screenshot of the Twitter app cropped to frame a tweet by the Trump Tribune bot account
+link:
+  url: https://twitter.com/trump_tribune
+  text: View latest by @Trump_Tribune
+  hover: View account on twitter.com
+tags: []
+
+---
+
+id: 100-days
+title: 100 Days
+subtitle: Art project + gallery site
+body: During 2015 and 2016 I completed a 100-day art+design exercise to challenge myself and expand my skillset, posting the results each day on my Twitter account.
+
+  This gallery site collects my output from the project and was built using Angular 2 (during the brief period that it existed). The source code can be found on <a href="https://github.com/admvx/gallery">Github</a>.
+date: 2016-10-02
+image_description: Screenshot of the 100 days gallery site, showing a grid of thumbnail images overlaid with introductory text
+link:
+  url: https://admvx.com/100days
+  text: Open gallery site
+  hover: View the 100 Days gallery
+tags: []
+
+---
+
+id: mission-mrd
+title: Mission MRD
+subtitle: Touchscreen educational game
+body: Mission MRD is another educational game authored for <a href="https://www.gene.com/">Genentech</a>, this time with a focus on the concept of Minimal Residual Disease.
+  
+  My contribution to this project was the technical design and implementation, along with gameplay animation, while other colleagues provided conceptual and visual designs. The tech stack is similar to that of Factor Fusion, though in this case the simple physics behaviours are bespoke.
+image_description: Screenshot of the Mission MRD game, showing white blood cells in various stages of division and disintegration
+link:
+  url: https://www.gene.com/mission-mrd/
+  text: Play Mission MRD
+  hover: Launch the game on gene.com
+tags: []
+
+---
+
+id: thought-toilet
+title: Thought Toilet
+subtitle: Realtime Twitter monitor
+body: Besides providing an excuse to learn a new web framework, I designed and built this web app as a means of highlighting just how much noise there is out there in the Twittersphere.
+
+  The back-end runs on Node.js to access the <a href="https://developer.twitter.com/">Twitter API</a>, while the front-end uses a homespun tweening engine in addition to version 1.x of Angular.
+date: 2014-10-05
+image_description: Screenshot of the Thought Toilet web app, showing a spiral of tweets fading away towards the center
+link:
+  url: https://admvx.com/toilet
+  text: Launch Thought Toilet
+  hover: Open the web app
+tags: []
+
+---
+
+id: codepen-experiments
+title: CodePen experiments
+page_title: codepen.io experiments
+subtitle: Dev scratchpad + idea journal
+tall_title: true
+body: My profile on <a href="https://codepen.io/">codepen.io</a> is a fairly even split of technical tests (proving a concept, or making cross-device comparisons) and CSS-centric generative animations.
+  
+  While the latter entries make for more stimulating viewing, it’s possible to see a through-line from the tech tests to several of the projects documented here.
+image_description: Screenshot of the codepen.io website, showing a profile page with a row of linked articles
+link:
+  url: https://codepen.io/admvx
+  text: View profile on codepen.io
+  hover: Open profile page
+tags: []
+
+---
+
+id: i-can-quit
+title: i-Can-Quit app
+page_title: iCanQuit app
+subtitle: Mobile app illustrations
+body: My brief on this project was to devise visual concepts to accompany articles, tasks and achievements unlocked within a smoking cessation app, and then realize them as minimal vector illustrations in accordance with the established look and feel.
+  
+  The linked gallery highlights some of the 80+ illustrations I produced for the iCanQuit app.
+image_description: Collage of illustrations used in the iCanQuit mobile app
+link:
+  url: https://photos.app.goo.gl/f2i7C9ezNOmuYSJo2
+  text: View image gallery
+  hover: Open gallery on Google Photos
+tags: []
+
+---

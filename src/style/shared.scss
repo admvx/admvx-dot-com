@@ -1,0 +1,58 @@
+$navy: #3f4353;
+$white: #fcf5f0;
+
+$backgroundColor: $navy;
+$textColor: $white;
+
+$green: #75BDA8;
+$tan: #FBC4A9;
+$red: #E33E59;
+
+$basePolyhedronSize: 35vmin;
+$headerHeight: 10vmin;
+
+$unitSizePerMinWidth: (
+  0px: 1.3617021277vw,
+  470px: 6.4px,
+  640px: 1vw,
+  1280px: 12.8px
+);
+
+@mixin absoluteT {
+  position: absolute;
+  top: 0;
+}
+@mixin absoluteB {
+  position: absolute;
+  bottom: 0;
+}
+@mixin absoluteL {
+  position: absolute;
+  right: 0;
+}
+@mixin absoluteR {
+  position: absolute;
+  right: 0;
+}
+
+@mixin absoluteTL {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@function getRangeCalc($from, $to, $varName, $includeAlternator: false) {
+  @if ($includeAlternator) {
+    @if ($from < $to) {
+      @return calc(#{$from} + #{$to - $from} * var(#{$varName}) * var(--alternator));
+    } @else {
+      @return calc(#{$from} - #{$from - $to} * var(#{$varName}) * var(--alternator));
+    }
+  } @else {
+    @if ($from < $to) {
+      @return calc(#{$from} + #{$to - $from} * var(#{$varName}));
+    } @else {
+      @return calc(#{$from} - #{$from - $to} * var(#{$varName}));
+    }
+  }
+}
