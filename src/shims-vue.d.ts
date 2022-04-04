@@ -3,8 +3,6 @@ declare module '*.vue' {
   export default Vue
 }
 
-declare module '*.css' { }  // Used by ../data/detect-scroll-style.ts
-
 declare module '*/work.yaml' {
   
   export enum WorkTag {

@@ -13,7 +13,12 @@ export const loadOverlayScrollStyleIfRequired = () => {
   inner.remove();
   outer.remove();
   
-  if (cw !== ow) { require('@/assets/overlay-scrollbar.css'); }
+  if (cw !== ow) {
+    let scrollStyleSheetElement = document.createElement('link');
+    scrollStyleSheetElement.setAttribute('rel', 'stylesheet');
+    scrollStyleSheetElement.setAttribute('href', '/css/overlay-scrollbar.css');
+    document.head.appendChild(scrollStyleSheetElement);
+  }
   
   return cw === ow;
 };
