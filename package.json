@@ -1,12 +1,12 @@
 {
   "name": "admvx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "start": "npm run serve",
-    "post-install": "cp ./hacked-modules/seen.js ./node_modules/seen/dist/latest/seen.js"
+    "postinstall": "cp ./hacked-modules/seen.js ./node_modules/seen/dist/latest/seen.js"
   },
   "dependencies": {
     "vue": "^2.6.14",
