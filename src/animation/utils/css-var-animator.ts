@@ -1,5 +1,6 @@
 import { RangeMapper } from './range-mapper';
 import { SpringEase } from './spring-ease';
+import { ViewportVar, RawViewportVar, RawViewportPosition, viewportVarChainToPx } from './viewport-pixels';
 
 export type AnimationPropertySet = {
   [paramName: string]: number;
@@ -12,22 +13,9 @@ export type ProxyTargetNumeric = {
   [varName: string]: number;
 };
 
-export type ViewportUnit = 'vw' | 'vh' | 'vmin' | 'vmax';
-
-type ViewportVar = {
-  value: number;
-  unit: ViewportUnit;
-  varName: string;
-};
 type ViewportPosition = {
   x: ViewportVar[];
   y: ViewportVar[];
-};
-
-export type RawViewportVar = [number, ViewportUnit];
-export type RawViewportPosition = {
-  x: RawViewportVar[];
-  y: RawViewportVar[];
 };
 
 export const getCssVarProxy = (targetElement: HTMLElement, varNames: string[]): ProxyTarget => {
@@ -80,34 +68,6 @@ export const getNumericCssVarProxy = (targetElement: HTMLElement, varNames: stri
       return true;
     }
   });
-};
-
-export const viewportUnitToPx = (value: number, unit: ViewportUnit): number => {
-  if (value === 0) return 0;
-  let scale = 0;
-  switch (unit) {
-    case 'vw':
-      scale = window.innerWidth;
-      break;
-    case 'vh':
-      scale = window.innerHeight;
-      break;
-    case 'vmin':
-      scale = Math.min(window.innerWidth, window.innerHeight);
-      break;
-    case 'vmax':
-      scale = Math.max(window.innerWidth, window.innerHeight);
-      break;
-  }
-  return value * scale * 0.01;
-};
-
-export const viewportVarsToPx = (viewportVars: ViewportVar[]): number => {
-  let tally = 0;
-  for (let viewVar of viewportVars) {
-    tally += viewportUnitToPx(viewVar.value, viewVar.unit);
-  }
-  return tally;
 };
 
 export const cssProperties = {
@@ -165,8 +125,8 @@ export class CssVarAnimator {
   protected initializeRange(base: 0 | 1): void {
     let effectiveFromPos = base ? this.toPosition : this.fromPosition;
     let effectiveToPos = base ? this.fromPosition : this.toPosition;
-    let deltaX = viewportVarsToPx(effectiveToPos.x) - viewportVarsToPx(effectiveFromPos.x);
-    let deltaY = viewportVarsToPx(effectiveToPos.y) - viewportVarsToPx(effectiveFromPos.y);
+    let deltaX = viewportVarChainToPx(effectiveToPos.x) - viewportVarChainToPx(effectiveFromPos.x);
+    let deltaY = viewportVarChainToPx(effectiveToPos.y) - viewportVarChainToPx(effectiveFromPos.y);
     let rangeParamsX = [0, deltaX];
     let rangeParamsY = [0, deltaY];
     if (base) {

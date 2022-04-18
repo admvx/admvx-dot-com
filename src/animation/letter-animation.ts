@@ -2,7 +2,8 @@ import { Ease } from './utils/tween-core';
 import { TweenRunner } from './utils/tween-runner';
 import { Bezier } from './utils/bezier';
 import { timeout } from '@/core/utils/ticker';
-import { CssVarAnimator, RawViewportPosition, RawViewportVar, cssProperties, viewportUnitToPx } from './utils/css-var-animator';
+import { RawViewportPosition, RawViewportVar, viewportUnitToPx } from './utils/viewport-pixels';
+import { CssVarAnimator, cssProperties } from './utils/css-var-animator';
 import { RangeMapper } from './utils/range-mapper';
 
 export class LetterAnimator extends CssVarAnimator {
