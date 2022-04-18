@@ -1,5 +1,6 @@
 import { RangeMapper } from './range-mapper';
 import { SpringEase } from './spring-ease';
+import { getViewportWidth, getViewportHeight } from './viewport-pixels';
 
 export type AnimationPropertySet = {
   [paramName: string]: number;
@@ -87,16 +88,16 @@ export const viewportUnitToPx = (value: number, unit: ViewportUnit): number => {
   let scale = 0;
   switch (unit) {
     case 'vw':
-      scale = window.innerWidth;
+      scale = getViewportWidth();
       break;
     case 'vh':
-      scale = window.innerHeight;
+      scale = getViewportHeight();
       break;
     case 'vmin':
-      scale = Math.min(window.innerWidth, window.innerHeight);
+      scale = Math.min(getViewportWidth(), getViewportHeight());
       break;
     case 'vmax':
-      scale = Math.max(window.innerWidth, window.innerHeight);
+      scale = Math.max(getViewportWidth(), getViewportHeight());
       break;
   }
   return value * scale * 0.01;
