@@ -1,6 +1,7 @@
 import { Scene, Viewports, Model, SvgContext as makeSvgContext, SvgRenderContext, Camera, Projections, Shape } from 'seen';
 import { PolyhedronModel } from '@/animation/polyhedron-model';
-import { AnimationPropertySet, CssVarAnimator, RawViewportPosition, RawViewportVar } from './utils/css-var-animator';
+import { AnimationPropertySet, CssVarAnimator } from './utils/css-var-animator';
+import { RawViewportPosition, RawViewportVar } from './utils/viewport-pixels';
 import { LetterAnimator } from './letter-animation';
 import { Ticker, timeout } from '@/core/utils/ticker';
 import { Ease, EaseFunction } from './utils/tween-core';
