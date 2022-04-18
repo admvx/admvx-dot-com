@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig, Route, RawLocation } from 'vue-router';
 import Home from '@/views/home.vue';
 import { siteState } from '@/core/site-state';
-import { workEntries } from '@/core/work-entries';
 import { doubleRaf } from '@/core/utils/ticker';
 
 Vue.use(VueRouter);
@@ -13,7 +12,7 @@ export enum RouteNames {
 };
 
 const pageTitleLookup: {[id: string]: string} = { };
-workEntries.forEach(entry => pageTitleLookup[entry.id] = entry.page_title!);
+export const registerPageTitle = (pageId: string, title: string) => pageTitleLookup[pageId] = title;
 
 const routes: Array<RouteConfig> = [
   {

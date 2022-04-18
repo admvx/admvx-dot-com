@@ -1,4 +1,5 @@
 import rawEntries, { WorkEntry } from '@/content/work.yaml';
+import { registerPageTitle } from '@/router';
 export { WorkEntry as WorkEntryData };
 
 const anchorOpenMatcher = /<a .+?>/g;
@@ -21,4 +22,6 @@ rawEntries.forEach(entry => {
   entry.page_title = entry.page_title || entry.title;
   entry.aria_title = entry.title + ': ' + entry.subtitle;
   entry.fallback_extension = entry.fallback_extension || 'jpg';
+  
+  registerPageTitle(entry.id, entry.page_title);
 });
