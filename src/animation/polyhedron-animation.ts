@@ -264,9 +264,11 @@ export class PolyhedronAnimation {
       delay += polySwitchDuration * 0.5;
     }
     
-    SpringEase.to(this.shapeTransform, 'rotX', 0, { baseDuration: polySwitchDuration, delay, baseMagnitude: transitionRotX, stopThresholdMultiplier: 0.0015, friction: 4 });
-    SpringEase.to(this.shapeTransform, 'rotZ', 0, { baseDuration: polySwitchDuration*0.8, delay, baseMagnitude: transitionRot, stopThresholdMultiplier: 0.0015, friction: 4.2 });
-    SpringEase.to(this.shapeTransform, 'rotY', 0, { baseDuration: polySwitchDuration*0.9, delay, baseMagnitude: transitionRot, stopThresholdMultiplier: 0.0015, friction: 4.2 });
+    Promise.all([
+      SpringEase.to(this.shapeTransform, 'rotX', 0, { baseDuration: polySwitchDuration, delay, baseMagnitude: transitionRotX, stopThresholdMultiplier: 0.0015, friction: 4 }),
+      SpringEase.to(this.shapeTransform, 'rotZ', 0, { baseDuration: polySwitchDuration*0.8, delay, baseMagnitude: transitionRot, stopThresholdMultiplier: 0.0015, friction: 4.2 }),
+      SpringEase.to(this.shapeTransform, 'rotY', 0, { baseDuration: polySwitchDuration*0.9, delay, baseMagnitude: transitionRot, stopThresholdMultiplier: 0.0015, friction: 4.2 })
+    ]).then(() => this.stopTickerIfIdle());
     
     return timeout(polySwitchDuration * 0.8);
   }
@@ -319,13 +321,14 @@ export class PolyhedronAnimation {
     this.animateToRestPerProperty('y', idleY);
     this.animateToRestPerProperty('rotX', idleRotX);
     this.animateToRestPerProperty('rotY', idleRotY)
-      .then(() => {
-        if (this.state === State.header_idle) {
-          this.ticker.stop();
-        }
-      });
+      .then(() => this.stopTickerIfIdle());
   }
   
+  private stopTickerIfIdle(): void {
+    if (this.state === State.header_idle) {
+      this.ticker.stop();
+    }
+  }
   
   private animateToRestPerProperty(propertyName: ShapeTransformProperty, maxValue: number): Promise<number> {
     let duration: number = baseDuration * Math.abs(this.shapeTransform[propertyName]) / maxValue;
